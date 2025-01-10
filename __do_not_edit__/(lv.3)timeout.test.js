@@ -52,7 +52,7 @@ describe("timeOut 함수", () => {
     // 200ms 경과시키기
     jest.advanceTimersByTime(200);
 
-    await expect(timeoutPromise).rejects.toThrow("timeout");
+    await expect(timeoutPromise).rejects.toBe("timeout");
   });
 
   it("Promise가 지정된 시간 내에 이미 해결된 경우, 즉시 결과를 반환한다.", async () => {
@@ -79,7 +79,7 @@ describe("timeOut 함수", () => {
 
     jest.advanceTimersByTime(0);
 
-    await expect(timeoutPromise).rejects.toThrow("timeout");
+    await expect(timeoutPromise).rejects.toBe("timeout");
   });
 
   it("Promise가 해결되기 직전에 타임아웃이 발생하지 않는지 확인한다.", async () => {

@@ -10,7 +10,20 @@
  */
 
 // TODO: loginRequest 함수를 작성하세요.
-async function loginRequest(id, pw) {}
+// 비동기적 처리 1. settimeout 2. 통신
+async function loginRequest(id, pw) {
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      if (id === "admin" && pw === "1234") {
+        res("ok");
+      } else {
+        rej("fail");
+      }
+    }, 1000);
+  })
+
+
+}
 
 // export를 수정하지 마세요.
 export { loginRequest };

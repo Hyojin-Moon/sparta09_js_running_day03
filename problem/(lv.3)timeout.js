@@ -16,7 +16,7 @@ async function timeOut(promise, ms) {
   return new Promise((res, rej) => {
   const time = new Promise((res, rej) => {
     setTimeout(() => {
-      rej("timeout")
+      rej("timeout");
     }, ms)
     })
     Promise.race([promise, time])
